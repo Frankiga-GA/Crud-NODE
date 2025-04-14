@@ -8,9 +8,12 @@ router.get('/', (req, res) => {
         if (error){
           throw error; 
         } else{
-          res.send(results);
+          res.render('index', {registros : results})
+            
+         // res.render('edit', {dev: 'Juan Guerrero ', skill:'JavaScript', friends:['Dante', 'EL COMEDIANTE']});
         }
-  })
+  });
 });
+
 
 module.exports = router;

@@ -1,1 +1,57 @@
-<h1></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <title>CRUD NodeJS</title>
+</head>
+<body>
+  <header></header>
+    <nav></nav>
+
+  <main>
+    <section class="contanier mt-3">
+     <div class="card">
+      <div class="card-header">
+        <a href="./create.ejs" class="btn btn-sm btn-primary">Registrar</a>
+      </div>
+      <div class="card-body">
+        <table class="table table-sm table-striped">
+          <thead>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Marca</th>
+            <th>Color</th>
+            <th>Operaciones</th>
+          </thead>
+          <tbody>
+            <% registros.forEach(vehiculo => { %>
+              <tr> 
+                <td><%= vehiculo.id %></td>
+                <td><%= vehiculo.tipo %></td>
+                <td><%= vehiculo.marca %></td>
+                <td><%= vehiculo.color %></td>
+                <td>
+                  <a href="./edit/<%= vehiculo.id %>" class="action-link">
+                    <i class="fa-solid fa-pencil"></i> Editar
+                </a>
+                <a href="./delete" class="action-link">
+                    <i class="fa-solid fa-trash "></i> Eliminar
+                </a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+     </div>
+    </section>
+  </main>
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+</html>
