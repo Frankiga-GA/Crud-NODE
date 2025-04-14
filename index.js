@@ -4,6 +4,11 @@ const app = express();
 //Motor de plantillas 
 app.set('view engine', 'ejs');
 
+//configuracion captura de datos 
+app.use(express.urlencoded({extended:false}));
+app.use(express(express.json));
+
+
 //Enrutador 
 app.use('/', require('./router'));
 
